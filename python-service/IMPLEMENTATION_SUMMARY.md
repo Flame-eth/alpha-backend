@@ -205,21 +205,6 @@ Coverage in `test_briefings.py`:
 
 ---
 
-## Known Issue: Pydantic 2.12 Warning
-
-Pydantic 2.12 introduced a regression where `alias_generator` emits `UnsupportedFieldAttributeWarning` for every field during schema generation, even when the aliases are resolving correctly at runtime. This is a Pydantic internals issue that was not present in earlier 2.x releases.
-
-I attempted to work around it by switching from `Field(min_length=...)` to `annotated_types` constraints, and by removing `from __future__ import annotations`. Neither resolved it — the warning originates in `_generate_schema.py` in the alias application code path itself, not in any user-facing declaration.
-
-The warnings are suppressed in two places:
-
-1. `pytest.ini` — `filterwarnings = ignore::pydantic.warnings.UnsupportedFieldAttributeWarning`
-2. `app/main.py` — `warnings.filterwarnings("ignore", category=UnsupportedFieldAttributeWarning)` before the schemas are imported
-
-If the project upgrades beyond Pydantic 2.12, these filters should be removed and tested. If the regression is fixed upstream, the suppression is harmless but unnecessary.
-
----
-
 ## Running the Service
 
 ```bash
