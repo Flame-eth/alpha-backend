@@ -176,10 +176,10 @@ npm run test:e2e
 
 ## Implementation Guides
 
-- Python guide: `python-service/README.md`
-- Python implementation details: `python-service/IMPLEMENTATION_SUMMARY.md`
-- TypeScript guide: `ts-service/README.md`
-- TypeScript implementation details: `ts-service/IMPLEMENTATION_SUMMARY.md`
+- Python guide: [`python-service/README.md`](python-service/README.md)
+- Python implementation details: [`python-service/IMPLEMENTATION_SUMMARY.md`](python-service/IMPLEMENTATION_SUMMARY.md)
+- TypeScript guide: [`ts-service/README.md`](ts-service/README.md)
+- TypeScript implementation details: [`ts-service/IMPLEMENTATION_SUMMARY.md`](ts-service/IMPLEMENTATION_SUMMARY.md)
 
 ## Additional Notes
 
